@@ -1,5 +1,5 @@
 # Note Taker
 
-##Description
+## Description
 
-##Table of Contents
+## Table of Contents
