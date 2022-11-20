@@ -1,5 +1,6 @@
 const express = require("express");
 const notesRouter = express.Router();
+//call the alert library
 let alert = require("alert");
 
 //call the uuid library, to generate uuid
@@ -37,8 +38,8 @@ notesRouter.post("/api/notes", (request, response) => {
     noteArray.push(newNote);
   }
   //convert array to JSON object and write to external db.json file
-  fs.writeFile("./db/db.json", JSON.stringify(noteArray, null, 4), (err) =>
-    err ? alert(err) : alert(`Success! Your note is saved`)
+  fs.writeFile("./db/db.json", JSON.stringify(noteArray, null, 2), (err) =>
+    err ? alert(err) : alert("Success! Your note was saved")
   );
 });
 
