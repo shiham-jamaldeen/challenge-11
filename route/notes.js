@@ -13,14 +13,11 @@ const { join } = require("path");
 //use middleware body parser
 notesRouter.use(express.json());
 
-//global variables
-let newNoteArray = [];
-
 //read existing items from db.json when loading the notes page
 notesRouter.get("/api/notes", (request, response) => {
   fs.readFile("./db/db.json", "utf-8", (err, data) => {
     if (err) {
-      alert(err);
+      response.send(JSON.parse(err));
       return;
     } else {
       //pass note to the front end
@@ -36,27 +33,36 @@ notesRouter.post("/api/notes", (request, response) => {
     request.body.id = uuidv4();
     //convert string to JSON string
     let newNote = request.body;
+    //global variables
+    const newNoteArray = [];
     //push the new note to an array
     newNoteArray.push(newNote);
+
+    //read existing notes (from file) to an array
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+      // store contents in an array
+      const existingNotesArray = JSON.parse(data);
+
+      //merge two arrays
+      const mergedArray = existingNotesArray.concat(newNoteArray);
+
+      //write to external db
+
+      fs.writeFile(
+        "./db/db.json",
+        JSON.stringify(mergedArray, null, 2),
+        (err) => (err ? alert(err) : response.json(mergedArray))
+      );
+    });
   }
-  //write to external db
-  //SEE LINE 48 in ACTIVITY 20-STU_Data-Persistence
-  fs.writeFile(
-    "./db/db.json",
-    JSON.stringify(newNoteArray, null, 2),
-    { flag: "w+" },
-    (err) => (err ? alert(err) : response.json(newNoteArray))
-  );
 });
-//overwriting the file
-//
 
 notesRouter.delete("/api/notes/:id", (request, response) => {
   let deletedNoteId = request.params.id;
 
   fs.readFile("./db/db.json", "utf-8", (err, data) => {
     if (err) {
-      alert(err);
+      response.json(err);
       return;
     } else {
       //read contents from file and parse to array
@@ -69,7 +75,7 @@ notesRouter.delete("/api/notes/:id", (request, response) => {
           readFromFileArray.splice(index, 1);
         }
       }
-      //write the updated array to a new file
+      //write the updated array to a file (overwrite mode)
       fs.writeFile(
         "./db/db.json",
         JSON.stringify(readFromFileArray, null, 2),
