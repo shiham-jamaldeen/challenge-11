@@ -18,16 +18,19 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Get route for homepage
-app.get("/", (request, response) => {
-  response.sendFile(path.join(__dirname + "/public/index.html"));
-});
-
 //Get route for notes page
 app.get("/notes", (request, response) => {
   response.sendFile(path.join(__dirname + "/public/notes.html"));
 });
+//Get route to display the db file
+app.get("/api/notes", (request, response) => {
+  response.sendFile(path.join(__dirname, "/db/db.json"));
+});
 
+//Get route for homepage and other requests
+app.get("*", (request, response) => {
+  response.sendFile(path.join(__dirname + "/public/index.html"));
+});
 //listen to port
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
