@@ -1,17 +1,27 @@
 [
   {
-    "title": "001",
-    "text": "001",
-    "id": "986e9118-c4fe-432a-bf4c-f0629e77b7cf"
+    "title": "Complete Homework",
+    "text": "Homework due tomorrow 23rd Nov",
+    "id": "7461383a-1ca2-40a5-9fae-b153ad7e8f68"
   },
   {
-    "title": "002",
-    "text": "Note\nNoty\nNot\nNo\nN",
-    "id": "0acf1a1a-6a0d-40fb-a840-295c8b895282"
+    "title": "Budget for Xmas Holidays",
+    "text": "Budget of $5000",
+    "id": "fafa5f1a-34a7-4bed-bdae-8cbccd7302f9"
   },
   {
-    "title": "007",
-    "text": "009",
-    "id": "d7694056-94b9-4c66-84b5-c0c46d993a48"
+    "title": "Book flights",
+    "text": "Book flights Xmas hols to TAS",
+    "id": "4b50a7b4-f678-45d4-ba4b-833134e959c4"
+  },
+  {
+    "title": "Meet Class Teacher 23rd Nov",
+    "text": "Parent Teacher meeting @ 12:30",
+    "id": "22282eb5-0d42-45e6-b5bb-546c1842d937"
+  },
+  {
+    "title": "Go to bank 22nd Nov",
+    "text": "Commercial Bank, Adelaide Branch",
+    "id": "c0dd37ed-3198-4401-982a-70ff4b68805d"
   }
 ]
