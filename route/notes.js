@@ -17,7 +17,9 @@ notesRouter.use(express.json());
 notesRouter.get("/api/notes", (request, response) => {
   fs.readFile("./db/db.json", "utf-8", (err, data) => {
     if (err) {
-      response.send(JSON.parse(err));
+      let noDataArray;
+      try { noDataArray = [].concat (response.send(JSON.parse(data));} catch(err){ noDataArray=[];} 
+      //response.send(JSON.parse(err));
       return;
     } else {
       //pass note to the front end
