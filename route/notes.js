@@ -17,9 +17,9 @@ notesRouter.use(express.json());
 notesRouter.get("/api/notes", (request, response) => {
   fs.readFile("./db/db.json", "utf-8", (err, data) => {
     if (err) {
+      //db is empty, then pass an empty array back to the db
       let noDataArray;
-      try { noDataArray = [].concat(JSON.parse(data));} 
-      catch(err){ noDataArray=[];} 
+      noDataArray = [].concat(JSON.parse(data));
       response.send(JSON.parse(noDataArray));
       return;
     } else {
