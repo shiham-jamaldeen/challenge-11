@@ -7,7 +7,7 @@ const notes = require("./route/notes.js");
 app.use(notes);
 
 //define port
-const port = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 
 //define the default path
 const path = require("path");
@@ -32,6 +32,6 @@ app.get("*", (request, response) => {
   response.sendFile(path.join(__dirname + "/public/index.html"));
 });
 //listen to port
-app.listen(port, () => {
-  console.log(`app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`app listening at http://localhost:${PORT}`);
 });
