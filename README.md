@@ -29,7 +29,8 @@ No installation is needed. However, if you wish to fork the repo:
 #### Accessing the application
 
 - Go to the URL from your web browser: https://peaceful-escarpment-73157.herokuapp.com/
-- Alternatively,if you have downloaded the repository to your local machine, run the command `node server.js` from the terminal.
+- Alternatively, if you have downloaded the repository to your local machine
+run the command `node server.js` from the terminal.
 ```
 
 ```md
