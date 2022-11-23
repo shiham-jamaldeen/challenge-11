@@ -1,27 +1,22 @@
 [
   {
-    "title": "Complete Homework",
-    "text": "Homework due tomorrow 23rd Nov",
-    "id": "7461383a-1ca2-40a5-9fae-b153ad7e8f68"
+    "title": "Client Lunch",
+    "text": "Client lunch on Thursday",
+    "id": "f0377cc4-819f-4fa0-90e5-2650dd08fa01"
   },
   {
-    "title": "Budget for Xmas Holidays",
-    "text": "Budget of $5000",
-    "id": "fafa5f1a-34a7-4bed-bdae-8cbccd7302f9"
+    "title": "Reschedule Delivery",
+    "text": "Reschedule delivery from Amazon Prime",
+    "id": "fe8dc6bc-3eff-4524-ba1f-73bc21d97288"
   },
   {
-    "title": "Book flights",
-    "text": "Book flights Xmas hols to TAS",
-    "id": "4b50a7b4-f678-45d4-ba4b-833134e959c4"
+    "title": "Balance accounts",
+    "text": "Balance account books by end of day Sunday",
+    "id": "877a333e-9322-45c6-b745-b37f30e97822"
   },
   {
-    "title": "Meet Class Teacher 23rd Nov",
-    "text": "Parent Teacher meeting @ 12:30",
-    "id": "22282eb5-0d42-45e6-b5bb-546c1842d937"
-  },
-  {
-    "title": "Go to bank 22nd Nov",
-    "text": "Commercial Bank, Adelaide Branch",
-    "id": "c0dd37ed-3198-4401-982a-70ff4b68805d"
+    "title": "Call Bank",
+    "text": "Call bank on Friday",
+    "id": "8d9799de-3f63-4480-8afe-65756b8b838e"
   }
 ]

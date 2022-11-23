@@ -16,19 +16,15 @@ notesRouter.use(express.json());
 //read existing items from db.json when loading the notes page
 notesRouter.get("/api/notes", (request, response) => {
   fs.readFile("./db/db.json", "utf-8", (err, data) => {
-
     try {
-    //send data to front end after reading from the file  
-    response.send(JSON.parse(data));  
-   
+      //send data to front end after reading from the file
+      response.send(JSON.parse(data));
     } catch (err) {
-    //if notes isn't an array or can't be turned into one, send back a new empty array  
-    const emptyDataArray = [];
-    response.send(JSON.parse(emptyDataArray = [].concat(JSON.parse(data))));
-
-    }  
+      //if notes isn't an array or can't be turned into one, send back a new empty array
+      const emptyDataArray = [];
+      response.send(JSON.parse((emptyDataArray = [].concat(JSON.parse(data)))));
+    }
   });
-  
 });
 
 //write new items to db.json
@@ -46,15 +42,15 @@ notesRouter.post("/api/notes", (request, response) => {
     //read existing notes (from file) to an array
     fs.readFile("./db/db.json", "utf8", (err, data) => {
       try {
-       //incase if the file is empty, then send back an empty array 
+        //if the file is empty, then send back an empty array
         emptyDataArray = [].concat(JSON.parse(data));
-        } catch (err) {
+      } catch (err) {
         emptyDataArray = [];
-        }
-       //merge two arrays newNoteArray+emptyArray
-      const mergedArray = newNoteArray.concat(emptyDataArray);  
+      }
+      //merge two arrays newNoteArray+emptyArray
+      const mergedArray = newNoteArray.concat(emptyDataArray);
+
       //write to external db
-      //console.log (mergedArray);
       fs.writeFile(
         "./db/db.json",
         JSON.stringify(mergedArray, null, 2),
